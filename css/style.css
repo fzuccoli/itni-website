@@ -1,0 +1,102 @@
+/* Global Custom Styles for ITNI Main */
+
+::selection, ::-moz-selection { 
+    background-color: #FF4A6D; 
+    color: #FFFFFF; 
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Modals Glassmorphism */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(28, 27, 34, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-card {
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    background: rgba(43, 42, 51, 0.92);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 74, 109, 0.15);
+    border-radius: 20px;
+    padding: 40px;
+    overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease-out;
+}
+
+.modal-overlay.active .modal-card {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #FF4A6D;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    line-height: 1;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    color: #F4F4F4;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.modal-content {
+    color: #E5E5E5;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* Scrollbar for Modals */
+.modal-card::-webkit-scrollbar {
+    width: 6px;
+}
+.modal-card::-webkit-scrollbar-track {
+    background: transparent;
+}
+.modal-card::-webkit-scrollbar-thumb {
+    background: rgba(255, 74, 109, 0.2);
+    border-radius: 10px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+    .modal-card {
+        width: 95%;
+        padding: 24px;
+        border-radius: 16px;
+        max-height: 85vh;
+    }
+}

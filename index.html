@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITNI - Transformamos sua Empresa com Tecnologia</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- AOS Animations CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            primary: '#FF4A6D',
+                            secondary: '#C13654',
+                            dark1: '#2B2A33',
+                            dark2: '#1C1B22',
+                            light1: '#E5E5E5',
+                            light2: '#F4F4F4',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-light2 text-brand-dark1 font-sans antialiased overflow-x-hidden">
+
+    <!-- 1. Header / Nav -->
+    <header
+        class="fixed w-full top-0 z-50 bg-brand-dark2/85 backdrop-blur-lg border-b border-white/5 transition-all duration-300"
+        id="header">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <img src="assets/images/logotipo_negative.svg" alt="ITNI" class="h-10 w-auto">
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 text-brand-light1 text-sm font-medium">
+                <a href="#inicio" class="hover:text-brand-primary transition-colors">Início</a>
+                <a href="#quem-somos" class="hover:text-brand-primary transition-colors">Quem Somos</a>
+                <a href="#servicos" class="hover:text-brand-primary transition-colors">Serviços</a>
+                <a href="#contato"
+                    class="bg-brand-primary text-white px-6 py-2.5 rounded-lg hover:bg-brand-secondary transition-colors shadow-lg shadow-brand-primary/20">Fale
+                    Conosco</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-brand-light1 hover:text-brand-primary transition-colors" id="mobile-menu-btn"
+                aria-label="Abrir Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div class="md:hidden hidden bg-brand-dark2 border-t border-white/5 absolute w-full shadow-2xl"
+            id="mobile-menu">
+            <nav class="flex flex-col p-6 gap-6 text-brand-light1 font-medium">
+                <a href="#inicio"
+                    class="mobile-link hover:text-brand-primary transition-colors flex items-center gap-2"><i
+                        data-lucide="home" class="w-4 h-4"></i> Início</a>
+                <a href="#quem-somos"
+                    class="mobile-link hover:text-brand-primary transition-colors flex items-center gap-2"><i
+                        data-lucide="users" class="w-4 h-4"></i> Quem Somos</a>
+                <a href="#servicos"
+                    class="mobile-link hover:text-brand-primary transition-colors flex items-center gap-2"><i
+                        data-lucide="layers" class="w-4 h-4"></i> Serviços</a>
+                <a href="#contato"
+                    class="mobile-link hover:text-brand-primary transition-colors flex items-center gap-2"><i
+                        data-lucide="mail" class="w-4 h-4"></i> Contato</a>
+                <a href="#contato"
+                    class="mobile-link bg-brand-primary text-white text-center px-6 py-3 rounded-lg mt-2">Fale
+                    Conosco</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section id="inicio"
+        class="pt-32 pb-20 md:pt-48 md:pb-32 bg-gradient-to-br from-brand-dark2 to-brand-dark1 text-white relative overflow-hidden min-h-[90vh] flex items-center">
+        <!-- Modern Geometric/Blur Visuals -->
+        <div
+            class="absolute top-1/4 -right-20 w-96 h-96 bg-brand-primary rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse">
+        </div>
+        <div
+            class="absolute -bottom-32 -left-20 w-[30rem] h-[30rem] bg-brand-secondary rounded-full mix-blend-screen filter blur-[150px] opacity-20">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+            <div data-aos="zoom-in" data-aos-duration="1000">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-brand-light1 text-xs font-semibold tracking-widest uppercase mb-6 backdrop-blur-md">
+                    Consultoria em Tecnologia
+                </span>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] tracking-tight max-w-5xl"
+                data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                Transformamos sua Empresa com <span class="text-brand-primary">Tecnologia</span>
+            </h1>
+
+            <p class="text-lg md:text-2xl text-brand-light1/80 mb-12 max-w-3xl font-light" data-aos="fade-up"
+                data-aos-duration="1000" data-aos-delay="200">
+                Soluções tecnológicas simples e complexas para pequenas, médias e grandes empresas.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto"
+                data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <a href="#servicos"
+                    class="w-full sm:w-auto bg-brand-primary text-white px-8 py-4 rounded-xl font-bold hover:-translate-y-1 hover:bg-brand-secondary hover:shadow-[0_10px_30px_rgba(255,74,109,0.3)] transition-all text-[15px] md:text-base">
+                    Conheça Nossos Serviços
+                </a>
+                <a href="https://wa.me/" target="_blank"
+                    class="w-full sm:w-auto bg-brand-dark1 border border-white/10 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-white/5 hover:border-white/20 transition-all text-[15px] md:text-base">
+                    <i data-lucide="message-circle" class="w-5 h-5 text-[#25D366]"></i>
+                    Fale no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Quem Somos Section -->
+    <section id="quem-somos" class="py-24 md:py-32 bg-brand-light2">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center mb-24">
+                <!-- Text Column -->
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 text-brand-dark2">Quem Somos</h2>
+                    <div class="w-16 h-1.5 bg-brand-primary rounded-full mb-8"></div>
+                    <div class="space-y-6 text-lg text-brand-dark1/80 leading-relaxed font-light">
+                        <p>
+                            A ITNI é uma consultoria especializada em tecnologia, focada em alavancar o crescimento e a
+                            eficiência dos negócios. Entendemos que a tecnologia deve ser um facilitador estratégico.
+                        </p>
+                        <p>
+                            Trabalhamos lado a lado com sua equipe para criar desde automatizações simples, que otimizam
+                            a rotina operacional, até infraestruturas complexas que sustentam negócios em larga escala.
+                        </p>
+                    </div>
+                </div>
+                <!-- Image Column -->
+                <div class="lg:w-1/2 relative" data-aos="fade-left">
+                    <!-- Decorator -->
+                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-brand-light1 rounded-2xl -z-10"></div>
+                    <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-brand-primary/10 rounded-2xl -z-10"></div>
+
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200"
+                        alt="Equipe ITNI Consultoria" loading="lazy"
+                        class="rounded-2xl shadow-xl object-cover h-[450px] w-full">
+
+                    <!-- Floating Badge -->
+                    <div
+                        class="absolute bottom-8 -left-8 bg-white p-5 rounded-xl shadow-lg flex items-center gap-4 hidden md:flex border border-gray-100">
+                        <div class="bg-brand-primary/10 p-3 rounded-lg text-brand-primary">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-brand-dark2">Inovação</p>
+                            <p class="text-brand-dark1/60 text-sm">Alta Performance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Differentials Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-brand-primary/20 group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 bg-brand-light2 group-hover:bg-brand-primary/10 transition-colors rounded-xl flex items-center justify-center text-brand-primary mb-6">
+                        <i data-lucide="award" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-dark2">Experiência</h3>
+                    <p class="text-brand-dark1/70 font-light leading-relaxed">Anos de mercado entregando excelência e
+                        resultados tangíveis em transformação digital.</p>
+                </div>
+                <div class="bg-white p-10 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-brand-primary/20 group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 bg-brand-light2 group-hover:bg-brand-primary/10 transition-colors rounded-xl flex items-center justify-center text-brand-primary mb-6">
+                        <i data-lucide="layers" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-dark2">Soluções Completas</h3>
+                    <p class="text-brand-dark1/70 font-light leading-relaxed">Do simples ao complexo. Cuidamos de ponta
+                        a ponta de todo o seu ecossistema tecnológico.</p>
+                </div>
+                <div class="bg-white p-10 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-brand-primary/20 group"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 bg-brand-light2 group-hover:bg-brand-primary/10 transition-colors rounded-xl flex items-center justify-center text-brand-primary mb-6">
+                        <i data-lucide="building-2" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-brand-dark2">Empresas de Todos Tamanhos</h3>
+                    <p class="text-brand-dark1/70 font-light leading-relaxed">Apoiamos pequenas, médias e grandes
+                        operações com soluções escaláveis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Serviços Section -->
+    <section id="servicos" class="py-24 md:py-32 bg-brand-dark1 text-brand-light2 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">Nossos Serviços</h2>
+                <div class="w-16 h-1.5 bg-brand-primary rounded-full mx-auto mb-6"></div>
+                <p class="text-lg text-brand-light1/70 max-w-2xl mx-auto font-light">
+                    Soluções completas em tecnologia para o seu negócio.
+                </p>
+            </div>
+
+            <!-- Services Grid (7 Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1 -->
+                <div class="bg-brand-dark2 p-8 rounded-2xl border border-white/5 hover:-translate-y-2 hover:border-brand-primary/40 transition-all duration-300 shadow-lg group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <i data-lucide="bot"
+                        class="w-10 h-10 text-brand-primary mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold mb-3 text-brand-light2">Automação</h3>
+                    <p class="text-brand-light1/60 leading-relaxed font-light text-sm md:text-base">Otimize processos
+                        operacionais, reduza falhas manuais e aumente drasticamente a produtividade da equipe.</p>
+                </div>
+
+                <!-- 2 -->
+                <div class="bg-brand-dark2 p-8 rounded-2xl border border-white/5 hover:-translate-y-2 hover:border-brand-primary/40 transition-all duration-300 shadow-lg group"
+                    data-aos="fade-up" data-aos-delay="150">
+                    <i data-lucide="compass"
+                        class="w-10 h-10 text-brand-primary mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold mb-3 text-brand-light2">Discovery Estratégico & Prototipação</h3>
+                    <p class="text-brand-light1/60 leading-relaxed font-light text-sm md:text-base">Planejamento
+                        meticuloso e validação rápida de ideias antes do investimento total em desenvolvimento.</p>
+                </div>
+
+                <!-- 3 -->
+                <div class="bg-brand-dark2 p-8 rounded-2xl border border-white/5 hover:-translate-y-2 hover:border-brand-primary/40 transition-all duration-300 shadow-lg group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <i data-lucide="cpu"
+                        class="w-10 h-10 text-brand-primary mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold mb-3 text-brand-light2">Modernização de Sistemas Legados</h3>
+                    <p class="text-brand-light1/60 leading-relaxed font-light text-sm md:text-base">Atualize sua
+                        tecnologia e crie aplicações web escaláveis, seguras e de alta performance.</p>
+                </div>
+
+                <!-- 4 -->
+                <div class="bg-brand-dark2 p-8 rounded-2xl border border-white/5 hover:-translate-y-2 hover:border-brand-primary/40 transition-all duration-300 shadow-lg group"
+                    data-aos="fade-up" data-aos-delay="250">
+                    <i data-lucide="shopping-bag"
+                        class="w-10 h-10 text-brand-primary mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold mb-3 text-brand-light2">E-commerce de Alta Conversão</h3>
+                    <p class="text-brand-light1/60 leading-relaxed font-light text-sm md:text-base">Venda mais online
+                        com plataformas fluidas focadas inteiramente na experiência do usuário e conversão.</p>
+                </div>
+
+                <!-- 5 -->
+                <div class="bg-brand-dark2 p-8 rounded-2xl border border-white/5 hover:-translate-y-2 hover:border-brand-primary/40 transition-all duration-300 shadow-lg group"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <i data-lucide="pen-tool"
+                        class="w-10 h-10 text-brand-primary mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold mb-3 text-brand-light2">Projeto de Comunicação</h3>
+                    <p class="text-brand-light1/60 leading-relaxed font-light text-sm md:text-base">Criação de marca
+                        autêntica. Construa sua identidade visual e posicione-se firmemente no mercado.</p>
+                </div>
+
+                <!-- 6 -->
+                <div class="bg-brand-dark2 p-8 rounded-2xl border border-white/5 hover:-translate-y-2 hover:border-brand-primary/40 transition-all duration-300 shadow-lg group"
+                    data-aos="fade-up" data-aos-delay="350">
+                    <i data-lucide="megaphone"
+                        class="w-10 h-10 text-brand-primary mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold mb-3 text-brand-light2">Campanha de Marketing</h3>
+                    <p class="text-brand-light1/60 leading-relaxed font-light text-sm md:text-base">Alcance novos
+                        clientes e fidelize os atuais através de estratégias digitais inteligentes e orientadas a dados.
+                    </p>
+                </div>
+
+                <!-- 7 -->
+                <div class="bg-brand-dark2 p-8 rounded-2xl border border-white/5 hover:-translate-y-2 hover:border-brand-primary/40 transition-all duration-300 shadow-lg group md:col-span-2 lg:col-span-1 lg:col-start-2"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <i data-lucide="server"
+                        class="w-10 h-10 text-brand-primary mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold mb-3 text-brand-light2">Infraestrutura Web</h3>
+                    <p class="text-brand-light1/60 leading-relaxed font-light text-sm md:text-base">Arquitetura de
+                        servidores focada em estabilidade, performance global e segurança máxima para seus dados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contato Section -->
+    <section id="contato" class="py-24 md:py-32 bg-gradient-to-b from-brand-light2 to-brand-light1 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100"
+                data-aos="fade-up">
+
+                <!-- Coluna Esquerda: Informações -->
+                <div
+                    class="lg:w-5/12 bg-brand-dark2 p-10 md:p-14 text-white relative overflow-hidden flex flex-col justify-between">
+                    <div
+                        class="absolute -top-24 -right-24 w-64 h-64 bg-brand-primary rounded-full blur-[80px] opacity-20">
+                    </div>
+
+                    <div class="relative z-10 mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Vamos Conversar?</h2>
+                        <p class="text-brand-light1/70 mb-12 text-lg font-light leading-relaxed">Entre em contato hoje e
+                            descubra exatamente como podemos transformar o futuro da sua empresa.</p>
+
+                        <div class="flex flex-col gap-8">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-white/10 p-3 rounded-lg">
+                                    <i data-lucide="mail" class="text-brand-primary w-5 h-5"></i>
+                                </div>
+                                <div class="mt-1">
+                                    <p class="font-bold text-brand-light2">E-mail</p>
+                                    <a href="mailto:contato@itni.com"
+                                        class="text-brand-light1/60 hover:text-white transition-colors">contato@itni.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-white/10 p-3 rounded-lg">
+                                    <i data-lucide="phone" class="text-brand-primary w-5 h-5"></i>
+                                </div>
+                                <div class="mt-1">
+                                    <p class="font-bold text-brand-light2">Telefone</p>
+                                    <a href="tel:+5511999999999"
+                                        class="text-brand-light1/60 hover:text-white transition-colors">(11)
+                                        99999-9999</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-white/10 p-3 rounded-lg">
+                                    <i data-lucide="map-pin" class="text-brand-primary w-5 h-5"></i>
+                                </div>
+                                <div class="mt-1">
+                                    <p class="font-bold text-brand-light2">Localização</p>
+                                    <p class="text-brand-light1/60">São Paulo, SP - Brasil</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 mt-auto pt-8 border-t border-white/10">
+                        <a href="https://wa.me/" target="_blank"
+                            class="bg-[#2B2A33] border border-white/10 text-white w-full rounded-xl p-5 flex items-center justify-center gap-3 font-bold hover:bg-white hover:text-brand-dark2 transition-all text-lg shadow-sm">
+                            <i data-lucide="message-circle" class="w-6 h-6 text-[#25D366]"></i>
+                            Iniciar Chat no WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Formulário -->
+                <div class="lg:w-7/12 p-10 md:p-14 bg-white">
+                    <h3 class="text-2xl font-bold mb-8 text-brand-dark2 hidden lg:block">Envie sua Mensagem</h3>
+                    <form id="contact-form" class="flex flex-col gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-brand-dark1 mb-2">Nome Completo</label>
+                                <input type="text" id="name" required
+                                    class="w-full bg-brand-light2 border border-transparent rounded-xl px-4 py-3.5 outline-none focus:border-brand-primary focus:bg-white focus:ring-4 focus:ring-brand-primary/10 transition-all text-brand-dark1"
+                                    placeholder="Insira o seu nome">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-brand-dark1 mb-2">Telefone</label>
+                                <input type="tel" id="phone" required
+                                    class="w-full bg-brand-light2 border border-transparent rounded-xl px-4 py-3.5 outline-none focus:border-brand-primary focus:bg-white focus:ring-4 focus:ring-brand-primary/10 transition-all text-brand-dark1"
+                                    placeholder="(00) 0000-0000">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-brand-dark1 mb-2">E-mail Corporativo</label>
+                            <input type="email" id="email" required
+                                class="w-full bg-brand-light2 border border-transparent rounded-xl px-4 py-3.5 outline-none focus:border-brand-primary focus:bg-white focus:ring-4 focus:ring-brand-primary/10 transition-all text-brand-dark1"
+                                placeholder="insira seu email">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-brand-dark1 mb-2">Sua Mensagem</label>
+                            <textarea id="message" rows="5" required
+                                class="w-full bg-brand-light2 border border-transparent rounded-xl px-4 py-3.5 outline-none focus:border-brand-primary focus:bg-white focus:ring-4 focus:ring-brand-primary/10 transition-all text-brand-dark1 resize-none"
+                                placeholder="Conte-nos um pouco sobre o seu desafio tecnológico..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="bg-brand-primary text-white font-bold py-4 rounded-xl mt-4 hover:bg-brand-secondary hover:shadow-[0_8px_25px_rgba(255,74,109,0.25)] transition-all w-full md:w-auto px-10 self-start flex items-center justify-center gap-2">
+                            <span>Enviar Mensagem</span>
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer class="bg-brand-dark2 text-brand-light1 pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="assets/images/logotipo_negative.svg" alt="ITNI" class="h-10 w-auto mb-6">
+                    <p class="text-brand-light1/60 max-w-sm mb-8 font-light leading-relaxed">
+                        Consultoria especializada em tecnologia. Entregamos soluções inovadoras para acelerar resultados
+                        e transformar o futuro da sua empresa.
+                    </p><!--
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors border border-white/5">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors border border-white/5">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors border border-white/5">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>-->
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Navegação</h4>
+                    <ul class="flex flex-col gap-3 font-light">
+                        <li><a href="#inicio"
+                                class="text-brand-light1/60 hover:text-brand-primary transition-colors">Início</a></li>
+                        <li><a href="#quem-somos"
+                                class="text-brand-light1/60 hover:text-brand-primary transition-colors">Quem Somos</a>
+                        </li>
+                        <li><a href="#servicos"
+                                class="text-brand-light1/60 hover:text-brand-primary transition-colors">Serviços</a>
+                        </li>
+                        <li><a href="#contato"
+                                class="text-brand-light1/60 hover:text-brand-primary transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Legal</h4>
+                    <ul class="flex flex-col gap-3 font-light">
+                        <li><a href="#"
+                                class="text-brand-light1/60 hover:text-brand-primary transition-colors footer-modal-trigger"
+                                data-modal="terms">Termos de Uso</a></li>
+                        <li><a href="#"
+                                class="text-brand-light1/60 hover:text-brand-primary transition-colors footer-modal-trigger"
+                                data-modal="privacy">Privacidade</a></li>
+                        <li><a href="#"
+                                class="text-brand-light1/60 hover:text-brand-primary transition-colors footer-modal-trigger"
+                                data-modal="cookies">Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-brand-light1/40 gap-4 font-light">
+                <p>&copy; 2026 ITNI Consultoria. Todos os direitos reservados.</p>
+                <p>Designed for the future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed WhatsApp Floating Button -->
+    <a href="https://wa.me/" target="_blank" aria-label="Fale conosco no WhatsApp"
+        class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(37,211,102,0.5)] transition-all z-50 flex items-center justify-center group">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+        <!-- Optional hover tooltip -->
+        <span
+            class="absolute right-full mr-4 bg-brand-dark2 text-white text-sm px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+            Fale conosco!
+        </span>
+    </a>
+
+    <!-- Modals Section -->
+    <div id="modal-overlay" class="modal-overlay">
+        <!-- Terms Modal -->
+        <div id="modal-terms" class="modal-card" role="dialog" aria-modal="true" aria-labelledby="title-terms"
+            style="display: none;">
+            <button class="modal-close" aria-label="Fechar Modal">&times;</button>
+            <h2 id="title-terms" class="modal-title">Termos de Uso</h2>
+            <div class="modal-content">
+                <p>Estes termos regulam o uso da plataforma ITNI. Ao acessar nosso site, você concorda em cumprir estes
+                    termos de serviço, todas as leis e regulamentos aplicáveis.</p>
+                <br>
+                <p>O uso de qualquer informação ou material neste site é inteiramente por sua conta e risco, pelo qual
+                    não seremos responsáveis. Será sua própria responsabilidade garantir que quaisquer produtos,
+                    serviços ou informações disponíveis através deste site atendam às suas necessidades específicas.</p>
+            </div>
+        </div>
+
+        <!-- Privacy Modal -->
+        <div id="modal-privacy" class="modal-card" role="dialog" aria-modal="true" aria-labelledby="title-privacy"
+            style="display: none;">
+            <button class="modal-close" aria-label="Fechar Modal">&times;</button>
+            <h2 id="title-privacy" class="modal-title">Política de Privacidade</h2>
+            <div class="modal-content">
+                <p>Coletamos dados apenas para melhorar sua experiência. Sua privacidade é importante para nós. É
+                    política da ITNI respeitar a sua privacidade em relação a qualquer informação sua que possamos
+                    coletar no site ITNI.</p>
+                <br>
+                <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um
+                    serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento.</p>
+            </div>
+        </div>
+
+        <!-- Cookies Modal -->
+        <div id="modal-cookies" class="modal-card" role="dialog" aria-modal="true" aria-labelledby="title-cookies"
+            style="display: none;">
+            <button class="modal-close" aria-label="Fechar Modal">&times;</button>
+            <h2 id="title-cookies" class="modal-title">Política de Cookies</h2>
+            <div class="modal-content">
+                <p>Utilizamos cookies essenciais e analíticos para melhorar a navegação. Como é prática comum em quase
+                    todos os sites profissionais, este site usa cookies, que são pequenos arquivos baixados no seu
+                    computador, para melhorar sua experiência.</p>
+                <br>
+                <p>Você pode impedir a configuração de cookies ajustando as configurações do seu navegador. Esteja
+                    cience de que a desativação de cookies afetará a funcionalidade deste e de muitos outros sites que
+                    você visita.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
