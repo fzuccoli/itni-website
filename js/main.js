@@ -44,37 +44,66 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Form validation and mock submission
+    // Form validation and submission
     const form = document.getElementById('contact-form');
     if(form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault(); // Prevent page reload
-            
+
             const btn = form.querySelector('button[type="submit"]');
             const originalHtml = btn.innerHTML;
-            
+
+            // Get form data
+            const formData = new FormData(form);
+
             // Visual feedback for sending
             btn.innerHTML = '<span>Enviando...</span><i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i>';
             btn.disabled = true;
             lucide.createIcons(); // re-init icons
-            
-            // Mock API request delay
-            setTimeout(() => {
-                btn.innerHTML = '<span>Mensagem Enviada!</span><i data-lucide="check-circle" class="w-4 h-4"></i>';
-                btn.classList.add('bg-green-500');
+
+            try {
+                // Send form data to PHP script
+                const response = await fetch('contact.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Success
+                    btn.innerHTML = '<span>Mensagem Enviada!</span><i data-lucide="check-circle" class="w-4 h-4"></i>';
+                    btn.classList.add('bg-green-500');
+                    btn.classList.remove('bg-brand-primary', 'hover:bg-brand-secondary');
+                    lucide.createIcons();
+                    form.reset();
+                } else {
+                    // Error
+                    btn.innerHTML = '<span>Erro ao enviar</span><i data-lucide="x-circle" class="w-4 h-4"></i>';
+                    btn.classList.add('bg-red-500');
+                    btn.classList.remove('bg-brand-primary', 'hover:bg-brand-secondary');
+                    lucide.createIcons();
+
+                    // Show error message
+                    alert(result.message + (result.errors ? '\n\n' + result.errors.join('\n') : ''));
+                }
+            } catch (error) {
+                // Network error
+                btn.innerHTML = '<span>Erro de conexão</span><i data-lucide="x-circle" class="w-4 h-4"></i>';
+                btn.classList.add('bg-red-500');
                 btn.classList.remove('bg-brand-primary', 'hover:bg-brand-secondary');
                 lucide.createIcons();
-                form.reset();
-                
-                // Reset button after 3 seconds
-                setTimeout(() => {
-                    btn.innerHTML = originalHtml;
-                    btn.disabled = false;
-                    btn.classList.remove('bg-green-500');
-                    btn.classList.add('bg-brand-primary', 'hover:bg-brand-secondary');
-                    lucide.createIcons();
-                }, 3000);
-            }, 1500);
+                alert('Erro de conexão. Tente novamente.');
+            }
+
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                btn.innerHTML = originalHtml;
+                btn.disabled = false;
+                btn.classList.remove('bg-green-500', 'bg-red-500');
+                btn.classList.add('bg-brand-primary', 'hover:bg-brand-secondary');
+                lucide.createIcons();
+            }, 3000);
         });
     }
 

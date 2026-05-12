@@ -377,17 +377,17 @@
                 <!-- Coluna Direita: Formulário -->
                 <div class="lg:w-7/12 p-10 md:p-14 bg-white">
                     <h3 class="text-2xl font-bold mb-8 text-brand-dark2 hidden lg:block">Envie sua Mensagem</h3>
-                    <form id="contact-form" class="flex flex-col gap-6">
+                    <form id="contact-form" action="contact.php" method="POST" class="flex flex-col gap-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-semibold text-brand-dark1 mb-2">Nome Completo</label>
-                                <input type="text" id="name" required
+                                <input type="text" id="name" name="name" required
                                     class="w-full bg-brand-light2 border border-transparent rounded-xl px-4 py-3.5 outline-none focus:border-brand-primary focus:bg-white focus:ring-4 focus:ring-brand-primary/10 transition-all text-brand-dark1"
                                     placeholder="Insira o seu nome">
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold text-brand-dark1 mb-2">Telefone</label>
-                                <input type="tel" id="phone" required
+                                <input type="tel" id="phone" name="phone" required
                                     class="w-full bg-brand-light2 border border-transparent rounded-xl px-4 py-3.5 outline-none focus:border-brand-primary focus:bg-white focus:ring-4 focus:ring-brand-primary/10 transition-all text-brand-dark1"
                                     placeholder="(00) 0000-0000">
                             </div>
@@ -395,14 +395,14 @@
 
                         <div>
                             <label class="block text-sm font-semibold text-brand-dark1 mb-2">E-mail Corporativo</label>
-                            <input type="email" id="email" required
+                            <input type="email" id="email" name="email" required
                                 class="w-full bg-brand-light2 border border-transparent rounded-xl px-4 py-3.5 outline-none focus:border-brand-primary focus:bg-white focus:ring-4 focus:ring-brand-primary/10 transition-all text-brand-dark1"
                                 placeholder="insira seu email">
                         </div>
 
                         <div>
                             <label class="block text-sm font-semibold text-brand-dark1 mb-2">Sua Mensagem</label>
-                            <textarea id="message" rows="5" required
+                            <textarea id="message" name="message" rows="5" required
                                 class="w-full bg-brand-light2 border border-transparent rounded-xl px-4 py-3.5 outline-none focus:border-brand-primary focus:bg-white focus:ring-4 focus:ring-brand-primary/10 transition-all text-brand-dark1 resize-none"
                                 placeholder="Conte-nos um pouco sobre o seu desafio tecnológico..."></textarea>
                         </div>
